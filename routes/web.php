@@ -18,8 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('users', function(Request $request) {
+// Route::post('users', function(Request $request) {
 
-    return $request;
-    // return view('users');
+//     return $request;
+//     // return view('users');
+// });
+
+Route::get('users/{name}', function($username) {
+
+    return $username;
 });
