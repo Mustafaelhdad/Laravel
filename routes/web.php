@@ -24,7 +24,11 @@ Route::get('/', function () {
 //     // return view('users');
 // });
 
-Route::get('users/{name}', function($username) {
+// Route::get('users/{name}', function($username) {
 
-    return $username;
+//     return $username;
+// });
+
+Route::get('/users', function() {
+    return view('users', ['name' => '']);
 });
