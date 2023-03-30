@@ -32,3 +32,7 @@ Route::get('/', function () {
 Route::get('/users', function() {
     return view('users', ['name' => '']);
 });
+
+Route::get('/posts', function() {
+    return view('posts');
+});

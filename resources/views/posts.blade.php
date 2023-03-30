@@ -1,5 +1,5 @@
 @extends('layouts.nav')
 
 @section('title')
-Home
+Posts
 @endsection
