@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -29,10 +30,12 @@ Route::get('/', function () {
 //     return $username;
 // });
 
-Route::get('/users', function() {
-    return view('users', ['name' => '']);
-});
+// Route::get('/users', function() {
+//     return view('users', ['name' => '']);
+// });
 
-Route::get('/posts', function() {
-    return view('posts');
-});
+// Route::get('/posts', function() {
+//     return view('posts');
+// });
+
+Route::get('posts', [PostController::class, 'showPosts']);
