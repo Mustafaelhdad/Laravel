@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Route::post('users', function(Request $request) {
 
@@ -39,13 +40,13 @@ Route::get('/', function () {
 // });
 
 
-Route::controller(PostController::class)->group(function(){
-    Route::get('posts', 'showUsers');
-    Route::get('posts/create', 'createPosts');
-    Route::get('posts/edit/{id}', 'editPosts');
-    Route::get('posts/update/{id}', 'updatePosts');
-    Route::get('posts/delete/{id}', 'deletePosts');
-})
+// Route::controller(PostController::class)->group(function(){
+//     Route::get('posts', 'showUsers');
+//     Route::get('posts/create', 'createPosts');
+//     Route::get('posts/edit/{id}', 'editPosts');
+//     Route::get('posts/update/{id}', 'updatePosts');
+//     Route::get('posts/delete/{id}', 'deletePosts');
+// });
 
 // Route::get('users', [PostController::class, 'showUsers']);
 
@@ -56,3 +57,5 @@ Route::controller(PostController::class)->group(function(){
 // Route::get('posts/update/{id}', [PostController::class, 'updatePosts']);
 
 // Route::get('posts/delete/{id}', [PostController::class, 'deletePosts']);
+
+Route::resource('users', UserController::class);
