@@ -38,4 +38,21 @@ Route::get('/', function () {
 //     return view('posts');
 // });
 
-Route::get('posts', [PostController::class, 'showPosts']);
+
+Route::controller(PostController::class)->group(function(){
+    Route::get('posts', 'showUsers');
+    Route::get('posts/create', 'createPosts');
+    Route::get('posts/edit/{id}', 'editPosts');
+    Route::get('posts/update/{id}', 'updatePosts');
+    Route::get('posts/delete/{id}', 'deletePosts');
+})
+
+// Route::get('users', [PostController::class, 'showUsers']);
+
+// Route::get('posts/create', [PostController::class, 'createPosts']);
+
+// Route::get('posts/edit/{id}', [PostController::class, 'editPosts']);
+
+// Route::get('posts/update/{id}', [PostController::class, 'updatePosts']);
+
+// Route::get('posts/delete/{id}', [PostController::class, 'deletePosts']);

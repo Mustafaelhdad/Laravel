@@ -8,7 +8,11 @@ class PostController extends Controller
 {
     //
 
-    public function showPosts() {
-        return 'posts';
+    public function showUsers() {
+        return 'users data';
+    }
+
+    public function createPosts() {
+        view('posts');
     }
 }
