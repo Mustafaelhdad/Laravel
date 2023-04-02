@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -61,3 +62,6 @@ use Illuminate\Support\Facades\Route;
 // Route::resource('users', UserController::class)->except(['create']);
 
 Route::resource('users', UserController::class)->only(['create']);
+
+
+Route::get('user-profile', UserProfileController::class);
