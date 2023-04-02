@@ -58,4 +58,6 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('posts/delete/{id}', [PostController::class, 'deletePosts']);
 
-Route::resource('users', UserController::class);
+// Route::resource('users', UserController::class)->except(['create']);
+
+Route::resource('users', UserController::class)->only(['create']);
