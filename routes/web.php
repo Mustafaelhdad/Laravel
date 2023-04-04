@@ -61,7 +61,9 @@ use Illuminate\Support\Facades\Route;
 
 // Route::resource('users', UserController::class)->except(['create']);
 
-Route::resource('users', UserController::class)->only(['create']);
+// Route::resource('users', UserController::class)->only(['create']);
+// Route::resource('users', UserController::class)->middleware('auth');
+Route::resource('users', UserController::class);
 
 
 Route::get('user-profile', UserProfileController::class);
