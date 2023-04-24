@@ -16,10 +16,19 @@ return new class extends Migration
             $table->string('title', 4);
             $table->boolean('check')->default(0);
             $table->timestamps();
+
+            // $table->unsignedBigInteger('user_id');
+            // $table->foreign('user_id')->references('id')->on('users');
+
+
+            // the below method also works just fine
+            // $table->foreignId('user_id')->constrained();
+
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
         });
     }
 
-    
+
 
     /**
      * Reverse the migrations.
